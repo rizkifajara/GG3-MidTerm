@@ -33,6 +33,7 @@ Run the development server
 ## Database Documentation
 
 ### Video
+```json
   {
     title: {
       type: String,
@@ -61,11 +62,13 @@ Run the development server
       },
     ],
   }
+```
 
 Video schema contains products and comments fields which is array of id that refers to another collection.
 Aside from that, Video contains required title, description, url, and thumbnailUrl fields.
 
 ### Product
+```json
   {
     title: {
       type: String,
@@ -84,11 +87,12 @@ Aside from that, Video contains required title, description, url, and thumbnailU
       required: true,
     },
   }
+```
 
 Product schema contains required title, description, url, and price fields.
 
 ### Comment
-
+```json
   {
     username: {
       type: String,
@@ -104,7 +108,7 @@ Product schema contains required title, description, url, and price fields.
       required: true,
     },
   }
-
+```
 Comment schema contains username, post, and createdAt (MongoDB Timestamp) fields.
 
 ## API Documentation
@@ -114,6 +118,7 @@ Request :
 `GET /api/home`
 
 Response :
+```json
   {
       "data": [
           {
@@ -141,23 +146,26 @@ Response :
           "last_page": "http://localhost:3000/api/home?page=1&limit=10"
       }
   }
+```
 
 ### Add Video
 Request:
 `POST /api/video/:_id`
 Body:
+```json
   {
     "title": "Video1",
     "description": "description updated",
     "url": "youtube.com",
     "thumbnailUrl": "google.com"
   }
-
+```
 Response:
+```json
   {
     "message": "Video berhasil dibuat"
   }
-
+```
 
 
 ### Delete Video
@@ -165,33 +173,37 @@ Request:
   `DELETE /api/video/:_id`
 
 Response:
+```json
   {
     "message": "Delete Video berhasil"
   }
-
+```
 ### Update Video
 Request:
   `PUT /api/video/:_id`
 
 Body:
+```json
   {
     "title": "Video1",
     "description": "description updated",
     "url": "youtube.com",
     "thumbnailUrl": "google.com"
   }
-
+```
 Response:
+```json
   {
     "message": "Video berhasil diupdate"
   }
-
+```
 
 ### Read Comments in Video
 Request:
   `GET /api/comments/:id_video`
 
 Response:
+```json
   {
     "message": "Comments berhasil dimuat",
     "data": [
@@ -204,18 +216,20 @@ Response:
         }
     ]
   }
-
+```
 ### Add Comment in Video
 Request:
   `POST /api/comments/:id_video`
 
 Body:
+```json
   {
     "username": "user1",
     "post": "ini video baguztt bgttt!!!!"
   }
-
+```
 Response:
+```json
   {
     "message": "Comment berhasil dibuat",
     "data": {
@@ -226,12 +240,13 @@ Response:
         "__v": 0
     }
   }
-
+```
 ### Read All Products in Video
 Request:
   `GET /api/products/:_id`
 
 Response:
+```json
   {
     "message": "Product berhasil dimuat",
     "data": [
@@ -253,46 +268,53 @@ Response:
         }
     ]
   }
-
+```
 ### Add Product in Video
 Request:
   `POST /api/products/:_id`
 
 Body:
+```json
   {
     "title": "Product2",
     "description": "Description2",
     "url": "google.com",
     "price": 300000
   }
-
+```
 Response:
+```json
   {
     "message": "Product berhasil dibuat"
   }
+```
 
 ### Update Product
 Request:
   `PUT /api/products/:product_id`
 
 Body:
+```json
   {
     "title": "Product99",
     "description": "Description99",
     "url": "google99.com",
     "price": 9900000
   }
-
+```
 Response:
+```json
   {
     "message": "Product berhasil diupdate"
   }
-
+```
 ### Remove Product in Video
 Request:
   `DELETE /api/products/:id_video/:id_product`
 
 Response:
+```json
   {
     "message": "Product berhasil dihapus dari Video"
   }
+```
