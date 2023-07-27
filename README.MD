@@ -33,7 +33,7 @@ Run the development server
 ## Database Documentation
 
 ### Video
-```json
+```
   {
     title: {
       type: String,
@@ -68,7 +68,7 @@ Video schema contains products and comments fields which is array of id that ref
 Aside from that, Video contains required title, description, url, and thumbnailUrl fields.
 
 ### Product
-```json
+```
   {
     title: {
       type: String,
@@ -92,7 +92,7 @@ Aside from that, Video contains required title, description, url, and thumbnailU
 Product schema contains required title, description, url, and price fields.
 
 ### Comment
-```json
+```
   {
     username: {
       type: String,
