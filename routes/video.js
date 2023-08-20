@@ -6,6 +6,8 @@ const videoController = require('../controllers/videoController')
 
 router.get('/home', videoController.readAllVideo)
 
+router.get('/video/:_id', videoController.readOneVideo)
+
 router.post('/video', videoController.addVideo)
 
 router.put('/video/:_id', videoController.updateVideo)

@@ -2,9 +2,13 @@ require("./config/db");
 require('dotenv').config();
 const express = require("express");
 
+var cors = require('cors')
+
 const app = express();
 
 app.use(express.json());
+
+app.use(cors())
 
 // fix CORS
 app.use((req, res, next) => {

@@ -73,6 +73,20 @@ module.exports.readAllProduct = async(req, res) => {
   }
 }
 
+module.exports.readOneProduct = async(req, res) => {
+  
+  try {
+    const product = await Product.findOne({_id: req.params._id})
+    console.log(product)
+
+    res.status(200).json({ data: product})
+  } catch (e) {
+    console.log(err)
+    res.status(500).json({ message: "Gagal memuat product" });
+  }
+
+}
+
 module.exports.deleteProduct = async(req, res) => {
   try {
     await Video.updateOne({_id: req.params.id_videos}, {

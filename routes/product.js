@@ -6,6 +6,8 @@ const productController = require('../controllers/productController')
 
 router.get("/products/:_id", productController.readAllProduct)
 
+router.get("/products/get/:_id", productController.readOneProduct)
+
 router.post("/products/:_id", productController.addProduct)
 
 router.put("/products/:product_id", productController.updateProduct)

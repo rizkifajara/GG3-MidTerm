@@ -85,6 +85,18 @@ module.exports.readAllVideo = async (req, res) => {
   }
 };
 
+module.exports.readOneVideo =  async (req, res) => {
+  try {
+    const video = await Video.findOne({_id: req.params._id})
+    console.log(video)
+
+    res.status(200).json({ data: video})
+  } catch (e) {
+    console.log(e)
+    res.status(500).json({ message: "Gagal memuat video" });
+  }
+}
+
 module.exports.updateVideo = async (req, res) => {
   try {
     await Video.updateOne(
